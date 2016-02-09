@@ -13,17 +13,10 @@ All numbers in the elves' list are in feet. How many total square feet of wrappi
 *)
 open System 
 
-let calculateWrapping l w h =
+let calculateWrapping l w h =   
   let xs = [l*w; w*h ;h *l ]
   let extra = xs |> Seq.sort |> Seq.head
   (2*l*w + 2*w*h + 2*h*l) + extra
 
-let getlwh xs =
-  
-  "ss"
-
-let readFile =
-  System.IO.File.ReadAllLines @"..\data\day02.txt"
-  |> Seq.map(fun x -> getlwh x  )
 calculateWrapping  2 3 4 
 calculateWrapping 1 1 10  
